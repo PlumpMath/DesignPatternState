@@ -8,36 +8,44 @@ namespace DesignPatternState
 {
     public class ClockSetup : IClockSetup
     {
+        public int Year { get; set; }
+        public int Month { get; set; }
+        public int Day { get; set; }
+
         public void PushKnob()
         {
-            throw new NotImplementedException();
+            // Ska inte var == 1. Skrev så bara för att slippa error. Troligtvis helt fel tänk.
+            if (Year == 1)
+                Month++; 
         }
 
         public void RotateRight()
         {
-            throw new NotImplementedException();
+            if (Year > 1)
+                Year++;
         }
 
         public void RotateLeft()
         {
-            throw new NotImplementedException();
+            if (Year < 1)
+                Year--;
         }
 
         public int GetSelectedDate()
         {
-            throw new NotImplementedException();
+            return Year;
         }
 
-        public void YearState()
+        public void YearState(ClockSetup setup, int year)
         {
         }
 
-        public void MonthState()
+        public void MonthState(ClockSetup setup, int month)
         {
         }
 
-        public void DayState()
-        {            
+        public void DayState(ClockSetup setup, int day)
+        {
         }
     }
 }

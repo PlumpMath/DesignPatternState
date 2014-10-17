@@ -8,6 +8,9 @@ namespace DesignPatternState
 {
     public interface IClockSetup
     {
+        int Year { get; set; }
+        int Month { get; set; }
+        int Day { get; set; }
         void PushKnob();
         void RotateRight();
         void RotateLeft();
